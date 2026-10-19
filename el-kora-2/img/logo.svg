@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7B955"/><stop offset=".55" stop-color="#E8684A"/><stop offset="1" stop-color="#DB594B"/></linearGradient>
+<clipPath id="c"><circle cx="120" cy="120" r="104"/></clipPath>
+</defs>
+<circle cx="120" cy="120" r="116" fill="#0A2A33"/>
+<circle cx="120" cy="120" r="110" fill="none" stroke="#F4C26B" stroke-width="3"/>
+<g clip-path="url(#c)">
+<rect x="0" y="0" width="240" height="240" fill="url(#g)"/>
+<circle cx="120" cy="150" r="46" fill="#FFE7B0"/>
+<path d="M0 150c20-10 40-10 60 0s40 10 60 0 40-10 60 0 40 10 60 0v90H0z" fill="#0F4A57"/>
+<path d="M0 168c20-9 40-9 60 0s40 9 60 0 40-9 60 0 40 9 60 0v72H0z" fill="#0A2A33"/>
+</g>
+<text x="120" y="92" text-anchor="middle" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="38" fill="#0A2A33" letter-spacing="1">EL KORA</text>
+<text x="120" y="198" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="13" fill="#F4C26B" letter-spacing="3">MARISCOS · SUSHI</text>
+</svg>

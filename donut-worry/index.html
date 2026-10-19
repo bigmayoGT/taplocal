@@ -1,0 +1,966 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Donut Worry</title>
+<meta name="description" content="Donut Worry · Donuts, coffee and smoothies at 9115 E Baseline Rd #107, Mesa, AZ 85209. Menu, directions, hours and reviews.">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:title" content="Donut Worry">
+<meta property="og:description" content="Coffee &amp; Smoothies · 9115 E Baseline Rd #107, Mesa, AZ 85209">
+<meta property="og:image" content="img/logo.png">
+<link rel="icon" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita%20One&family=Nunito:wght@400;500;700&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Bakery","name":"Donut Worry","servesCuisine":"Donuts and coffee","telephone":"+1-480-621-6600","address":{"@type":"PostalAddress","streetAddress":"9115 E Baseline Rd #107","addressLocality":"Mesa","addressRegion":"AZ","postalCode":"85209","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"05:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"05:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"05:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"05:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"05:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"05:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"05:00","closes":"14:00"}],"sameAs":["https://www.instagram.com/donutworryarizona/"]}</script>
+<style>
+/* Layout: one 480px phone column on deep harbor navy; photo-led hero, anchor-red actions, a fixed bar of four taps. */
+:root{
+  --bg:#FFFFFF;--surface:#FFFFFF;--line:#F1DCE6;--text:#22301C;--muted:#6E6A72;
+  --accent:#93189F;--accent-text:#FFFFFF;--h1:#7FC244;--hl:#F76D95;--accent2:#5FA52E;
+  --display:"Lilita One","Arial Black",Impact,sans-serif;
+  --body:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:14px;--gut:16px;
+  color-scheme:light;
+}
+.wrap .hero::before{background:linear-gradient(180deg,transparent 0%,color-mix(in srgb,var(--bg) 25%,transparent) 30%,color-mix(in srgb,var(--bg) 82%,transparent) 58%,var(--bg) 82%)}
+.wrap .status{background:var(--surface)}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.5 var(--body);padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:480px;margin:0 auto}
+.pad{padding-inline:var(--gut)}
+h1,h2,h3{text-wrap:balance;margin:0}
+.ic{width:24px;height:24px;flex:none}
+.eyebrow{font:700 12px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.sec{padding-block:36px 8px;display:grid;gap:16px}
+.sec>h2{font:400 26px/1.1 var(--display);letter-spacing:.01em}
+
+/* Hero */
+.hero{position:relative;min-height:min(70svh,640px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;z-index:-2}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 15%,transparent) 0%,color-mix(in srgb,var(--bg) 40%,transparent) 40%,var(--bg) 96%)}
+.kanji{position:absolute;right:10px;top:18px;display:flex;flex-direction:column;font:400 clamp(84px,26vw,128px)/1 var(--display);color:var(--accent);opacity:.9;letter-spacing:-.04em;text-shadow:0 6px 30px rgba(0,0,0,.45);pointer-events:none;user-select:none}
+.hero-inner{width:100%;padding:24px var(--gut) 8px;display:grid;gap:14px;justify-items:start}
+.logo{width:76px;height:76px;border-radius:50%;box-shadow:0 0 0 3px var(--bg),0 8px 24px rgba(0,0,0,.5)}
+.hero h1{font:400 clamp(40px,12vw,56px)/.95 var(--display);letter-spacing:-.01em}
+.tag{margin:0;color:var(--text);opacity:.85;font-size:17px}
+.status{display:inline-flex;align-items:center;gap:8px;font:500 14px/1 var(--body);background:color-mix(in srgb,var(--bg) 72%,transparent);border:1px solid var(--line);padding:9px 12px;border-radius:999px;backdrop-filter:blur(6px)}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.status.open i{background:#3ECF7A;box-shadow:0 0 0 4px rgba(62,207,122,.18)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 22px;border-radius:999px;font:700 17px/1 var(--body);text-decoration:none;transition:transform .15s}
+.btn:active{transform:scale(.98)}
+.btn-accent{background:var(--accent);color:var(--accent-text)}
+.btn-ghost{border:1px solid var(--line);background:var(--surface)}
+.hero .btn{width:100%;margin-top:4px}
+
+/* Hero without a photo: poster-style field built from the brand colors */
+.hero--plain{min-height:auto;padding-top:56px;background:
+  radial-gradient(90% 70% at 85% 10%,color-mix(in srgb,var(--accent2) 30%,transparent),transparent 60%),
+  radial-gradient(70% 50% at 0% 0%,color-mix(in srgb,var(--accent) 24%,transparent),transparent 70%),var(--bg);padding-bottom:12px}
+.hero--plain::before{background:repeating-linear-gradient(-45deg,color-mix(in srgb,var(--text) 5%,transparent) 0 2px,transparent 2px 14px);-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.hero--plain h1{font-size:clamp(44px,14vw,64px)}
+.hero--plain .tag{font-style:italic;color:var(--accent2);opacity:1}
+.logo-wrap{position:relative;width:88px;height:88px;flex:none}
+.logo-wrap.is-badge{width:96px;height:96px}
+.logo-wrap .logo{position:absolute;inset:0;width:100%;height:100%}
+.logo-wrap.wide{width:auto;height:auto;padding:12px 18px;border-radius:18px;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.logo-wrap.wide .logo{position:static;display:block;width:min(230px,58vw);height:auto;border-radius:0;box-shadow:none}
+.logo-wrap.wide .mono{display:none}
+.hero h1{color:var(--h1,var(--text))}
+.hero h1 .k{color:var(--hl,var(--accent))}
+.mono{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:var(--accent2);color:var(--bg);font:400 34px/1 var(--display);box-shadow:0 0 0 3px var(--bg),0 8px 24px rgba(0,0,0,.5)}
+.logo.badge{background:var(--text);padding:9px;object-fit:contain;width:96px;height:96px}
+
+/* Hero illustration */
+
+.hero-art{position:absolute;right:-6px;top:28px;width:clamp(120px,34vw,160px);height:auto;transform:rotate(8deg);filter:drop-shadow(0 12px 30px rgba(0,0,0,.4));z-index:-1}
+@media (prefers-reduced-motion:no-preference){.hero-art{animation:clink 4s ease-in-out infinite}@keyframes clink{50%{transform:rotate(4deg) translateY(-4px)}}}
+.hero--plain h1{max-width:72%}
+
+/* Quick actions */
+.quick{list-style:none;margin:0;padding:20px var(--gut) 0;display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.quick li{grid-column:span 2}
+.quick.rem2 li:nth-last-child(-n+2){grid-column:span 3}
+.quick.rem1 li:last-child{grid-column:span 6}
+.quick.quad li{grid-column:span 3}
+.quick a{display:grid;justify-items:center;align-content:center;gap:8px;min-height:88px;padding:12px 6px;border-radius:var(--r);background:var(--surface);border:1px solid var(--line);text-decoration:none;font:500 13.5px/1.2 var(--body);text-align:center}
+.quick a .ic{color:var(--accent);width:26px;height:26px}
+.quick a:active{background:var(--line)}
+
+/* Featured */
+.rail{list-style:none;margin:0;padding:0 var(--gut) 6px;display:grid;grid-auto-flow:column;grid-auto-columns:72%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--gut);scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.card{scroll-snap-align:start;border-radius:var(--r);overflow:hidden;background:var(--surface);border:1px solid var(--line)}
+.card img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;max-width:100%}
+.card-txt{padding:12px 14px 14px}
+.card h3{font:700 16px/1.25 var(--body)}
+.card p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.card--text{display:grid;align-content:space-between;min-height:220px;background:linear-gradient(160deg,color-mix(in srgb,var(--accent) 22%,var(--surface)),var(--surface) 70%)}
+.card-ic{display:grid;place-items:center;width:56px;height:56px;margin:16px 14px 0;border-radius:50%;background:var(--bg);color:var(--accent2)}
+.card-ic .ic{width:28px;height:28px}
+.card--text h3{font:400 21px/1.15 var(--display)}
+.card-price{margin:8px 0 0!important;color:var(--accent2)!important;font:700 18px/1 var(--body)!important}
+.hint{margin:0;color:var(--muted);font-size:14px}
+
+/* Menu */
+.menu-box{display:grid;gap:14px;padding:18px;border-radius:var(--r);background:var(--surface);border:1px solid var(--line)}
+.menu-box p{margin:0;color:var(--muted)}
+.menu-thumb{padding:0;border:0;background:none;border-radius:10px;overflow:hidden;cursor:zoom-in}
+.menu-thumb img{display:block;width:100%}
+dialog{border:0;padding:0;background:#000;max-width:100vw;max-height:100dvh;width:100vw;height:100dvh;margin:0}
+dialog::backdrop{background:rgba(0,0,0,.85)}
+dialog .scroll{width:100%;height:100%;overflow:auto;touch-action:pan-x pan-y pinch-zoom;display:grid;place-items:center}
+dialog img{max-width:none;width:100%}
+dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:12px;width:48px;height:48px;border-radius:50%;border:0;background:var(--surface);color:var(--text);font:700 22px/1 var(--body)}
+
+/* Structured menu */
+.chips{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-inline:calc(-1 * var(--gut));padding:10px var(--gut);background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.chips::-webkit-scrollbar{display:none}
+.chips a{flex:none;min-height:40px;display:inline-flex;align-items:center;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);text-decoration:none;font:500 14px/1 var(--body);white-space:nowrap}
+.chips a.on{background:var(--accent2);border-color:var(--accent2);color:var(--bg)}
+.msec{scroll-margin-top:72px;display:grid;gap:4px}
+.msec header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px;padding:14px 0 8px;border-bottom:2px solid var(--accent)}
+.msec h3{font:400 22px/1.1 var(--display);color:var(--text)}
+.msec header{margin-inline:calc(-1 * var(--gut));padding:14px var(--gut) 12px;border:0;background:linear-gradient(100deg,var(--accent),color-mix(in srgb,var(--accent) 70%,#E23A33));box-shadow:inset 0 -4px 0 color-mix(in srgb,var(--accent2) 90%,transparent)}
+.msec header h3{color:var(--accent-text);font-size:26px;letter-spacing:.02em}
+.msec header p{color:var(--accent-text)!important;opacity:.9}
+.msec header p{margin:0;color:var(--accent2);font-size:13px;font-weight:500}
+.msec ul{list-style:none;margin:0;padding:0}
+.mi{display:grid;grid-template-columns:22px minmax(0,1fr) auto;
+gap:12px;padding:14px 0;border-bottom:1px solid var(--line);align-items:start}
+.glass{width:18px;height:28px;margin-top:2px;border-radius:2px 2px 5px 5px;clip-path:polygon(0 0,100% 0,88% 100%,12% 100%);background:linear-gradient(180deg,#FBF6EA 0 22%,var(--beer) 22%)}
+.glass.can{clip-path:none;border-radius:4px;background:linear-gradient(180deg,#d9dde3 0 10%,var(--beer) 10% 90%,#d9dde3 90%)}
+.mi.has-img{position:relative;cursor:pointer}
+.mi-open{position:absolute;inset:0;width:100%;border:0;background:none;padding:0;cursor:pointer;border-radius:10px;z-index:1}
+.mi.has-img:active{background:color-mix(in srgb,var(--accent) 10%,transparent)}
+@media (hover:hover){.mi.has-img:hover .mi-img{transform:scale(1.06)}}
+.mi-img{transition:transform .2s ease}
+.mi.has-img h4::after{content:" ›";color:var(--accent)}
+dialog.dish{width:min(100vw,480px);max-width:100vw;height:auto;max-height:92dvh;inset:auto 0 0 0;margin:0 auto;padding:0;border:0;border-radius:22px 22px 0 0;background:var(--surface);color:var(--text);overflow:auto}
+dialog.dish::backdrop{background:color-mix(in srgb,var(--bg) 70%,#000);backdrop-filter:blur(4px)}
+@media (prefers-reduced-motion:no-preference){dialog.dish[open]{animation:sheet .28s cubic-bezier(.2,.8,.2,1)}@keyframes sheet{from{transform:translateY(40px);opacity:.4}}}
+.dish-in{margin:0;padding-bottom:env(safe-area-inset-bottom,0px)}
+.dish-fig{position:relative;margin:0}
+.dish-fig img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;max-width:100%}
+.dish-x{position:absolute;top:12px;right:12px;width:44px;height:44px;border-radius:50%;border:0;background:color-mix(in srgb,var(--bg) 80%,transparent);color:var(--text);font:700 24px/1 var(--body);cursor:pointer}
+.dish-body{display:grid;gap:10px;padding:18px var(--gut) 20px}
+.dish-body .eyebrow{margin:0}
+.dish-body h3{font:400 30px/1.05 var(--display)}
+.dish-desc{margin:0;color:var(--muted);font-size:16px}
+.dish-desc:empty{display:none}
+.dish-prices{display:flex;gap:10px;flex-wrap:wrap}
+.dish-prices span{display:inline-flex;align-items:baseline;gap:8px;padding:10px 16px;border-radius:12px;background:var(--bg);border:1px solid var(--line);font:700 22px/1 var(--body);font-variant-numeric:tabular-nums}
+.dish-prices small{font:500 12px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.dish-cta{width:100%}
+.dish-nav{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dish-nav .btn{min-height:48px;font-size:15px;cursor:pointer;color:var(--text)}
+.mi.has-img{grid-template-columns:64px minmax(0,1fr) auto;gap:14px}
+.mi-img{width:64px;height:64px;border-radius:12px;object-fit:cover;max-width:100%;background:var(--surface)}
+.dot{width:10px;height:10px;margin:7px 0 0 6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 20%,transparent)}
+.mi h4{margin:0;font:700 17px/1.25 var(--body)}
+.num{display:inline-block;min-width:1.6em;color:var(--accent2);font-variant-numeric:tabular-nums}
+.mi-style{margin:2px 0 0;font-size:13.5px;color:var(--muted)}
+.mi-style b{color:var(--text);font-weight:500}
+.mi-desc{margin:6px 0 0;font-size:14.5px;color:var(--text);opacity:.85}
+.mi-price{margin:0;display:grid;gap:6px;text-align:right;font-variant-numeric:tabular-nums}
+.mi-price div{display:grid;gap:1px}
+.mi-price dt{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.mi-price dd{margin:0;font:700 16px/1.1 var(--body)}
+.msec.compact ul{display:grid;grid-template-columns:1fr 1fr;column-gap:14px}
+.msec.compact .mi{grid-template-columns:16px minmax(0,1fr);gap:8px;padding:12px 0}
+.msec.compact .mi.has-desc{grid-column:1 / -1}
+.msec.compact .dot{margin:6px 0 0 2px;width:8px;height:8px}
+.msec.compact .mi h4{font-size:16px}
+.msec-grid ul{display:grid;grid-template-columns:repeat(4,1fr);gap:14px 10px;padding-top:12px}
+.msec-grid .mi{display:grid;grid-template-columns:1fr!important;align-content:start;justify-items:center;text-align:center;gap:6px;padding:0;border:0}
+.msec-grid .mi-img{width:100%;height:auto;aspect-ratio:1;border-radius:50%;box-shadow:0 0 0 3px var(--accent2)}
+.msec-grid .mi h4{font-size:13.5px}
+.msec-grid .mi h4::after{content:""!important}
+.msec-grid .mi-desc{font-size:12px;margin-top:2px;opacity:.75}
+.mfoot{margin:6px 0 0;text-align:center;font-style:italic;color:var(--accent2);font-size:14px}
+.menu-box--extras{margin-top:8px}
+
+/* Promo */
+.promo{padding:20px;border-radius:var(--r);background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--bg)));color:var(--accent-text);display:grid;gap:10px;justify-items:start}
+.promo-ic{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:color-mix(in srgb,#fff 20%,transparent)}
+#promos{gap:12px}
+.promo .eyebrow{color:inherit;opacity:.85;margin:0}
+.promo h3{font:400 24px/1.1 var(--display)}
+.promo p{margin:0}
+.promo .btn{background:var(--bg);color:var(--text);min-height:48px}
+.season{margin:16px var(--gut) 0;padding:12px 16px;border-radius:var(--r);border:1px dashed var(--accent);color:var(--accent);font-weight:700;text-align:center}
+
+/* Review */
+.ask{padding:22px 18px;border-radius:var(--r);border:1px solid var(--line);display:grid;gap:14px;text-align:center;background:radial-gradient(120% 90% at 50% 0%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%)}
+.stars{color:var(--accent);display:flex;justify-content:center;gap:4px}
+.stars .ic{fill:currentColor;width:22px;height:22px}
+.ask p{margin:0;font-size:17px}
+
+/* Visit */
+.visit{display:grid;gap:12px}
+.row{display:flex;gap:14px;align-items:center;padding:16px;border-radius:var(--r);background:var(--surface);border:1px solid var(--line);text-decoration:none}
+.row .ic{color:var(--accent)}
+.row div{min-width:0}
+.row b{display:block;font-weight:700}
+.loc{display:grid;gap:2px;padding:6px 16px 8px;border-radius:var(--r);background:var(--surface);border:1px solid var(--line)}
+.loc>.loc-label{margin:10px 0 2px}
+.loc-line{display:flex;gap:14px;align-items:flex-start;padding:10px 0;text-decoration:none;border-top:1px solid var(--line)}
+.loc-line .ic{color:var(--accent);margin-top:1px}
+.loc-line>span{display:grid;gap:2px;min-width:0;flex:1}
+.loc-line small{color:var(--muted);font-size:14px}
+.loc-h{display:flex;justify-content:space-between;gap:12px;font-weight:500;font-variant-numeric:tabular-nums}
+.loc-h span:first-child{color:var(--muted);font-weight:400}
+.loc-label{display:block;color:var(--accent2)!important;font-size:11px!important;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:2px}
+.row small{color:var(--muted);font-size:14px}
+.hours{list-style:none;margin:0;padding:6px 16px;border-radius:var(--r);background:var(--surface);border:1px solid var(--line);font-variant-numeric:tabular-nums}
+.hours li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);color:var(--muted)}
+.hours li:last-child{border-bottom:0}
+.hours li.today{color:var(--text);font-weight:700}
+.hours li.today span:first-child::after{content:" · Today";color:var(--accent);font-weight:500}
+
+/* Social + footer */
+.social{display:flex;gap:12px;flex-wrap:wrap}
+.social a{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:var(--surface);text-decoration:none;font-weight:500}
+footer{padding:36px var(--gut) 24px;color:var(--muted);font-size:13px;display:grid;gap:4px;text-align:center}
+footer a{color:var(--muted)}
+
+/* Sticky bar */
+.sb{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:8px var(--gut) calc(8px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s ease}
+.sb.show{transform:none}
+.sb nav{max-width:480px;margin:0 auto;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px}
+.sb-btn{display:grid;justify-items:center;gap:4px;padding:8px 4px;min-height:58px;border-radius:12px;text-decoration:none;font:500 12px/1 var(--body);color:var(--muted)}
+.sb-btn .ic{color:var(--text)}
+.sb-btn.is-primary{background:var(--accent);color:var(--accent-text)}
+.sb-btn.is-primary .ic{color:var(--accent-text)}
+@media (min-width:600px){.wrap{border-inline:1px solid var(--line)}.rail{grid-auto-columns:60%}}
+
+/* Animated wave seams between sections */
+.seam{height:56px;background:var(--from);overflow:hidden;margin:-1px 0 -2px;position:relative;z-index:1}
+.seam svg{display:block;width:200%;height:100%}
+.seam .sw1{fill:color-mix(in srgb,var(--accent) 55%,var(--to));opacity:.8}
+.seam .sw2{fill:var(--to)}
+.band{background:var(--band-bg);padding-block:22px 30px!important}
+.band + .seam{margin-top:0}
+@media (prefers-reduced-motion:no-preference){.seam .sw1{animation:drift 16s linear infinite}.seam .sw2{animation:drift 22s linear infinite reverse}@keyframes drift{to{transform:translateX(-800px)}}}
+.reveal{opacity:1;transform:none}
+@media (prefers-reduced-motion:no-preference){.js .reveal:not(.in){opacity:.001;transform:translateY(24px)}.reveal{transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}}
+/* Brand gradient system */
+:root{--grad:linear-gradient(115deg,#93189F,#C02E92,#EE6C9E);--grad-soft:linear-gradient(160deg,color-mix(in srgb,#93189F 22%,var(--surface)),color-mix(in srgb,#C02E92 22%,var(--surface)),color-mix(in srgb,#EE6C9E 22%,var(--surface)))}
+.btn-accent,.sb-btn.is-primary,.chips a.on{background:var(--grad);background-size:200% 100%;background-position:0 0;border-color:transparent;transition:background-position .5s ease,transform .15s}
+.btn-accent:hover,.btn-accent:focus-visible{background-position:100% 0}
+.chips a.on{color:var(--accent-text)}
+.promo .eyebrow{background:none;color:inherit;opacity:.9}
+.msec header{background:var(--grad)!important;box-shadow:inset 0 -3px 0 color-mix(in srgb,#fff 35%,transparent)!important}
+.promo{background:var(--grad)}
+.card{background:var(--grad-soft);border:1px solid color-mix(in srgb,var(--accent2) 25%,var(--line))}
+.card--text{background:linear-gradient(170deg,color-mix(in srgb,var(--accent) 34%,var(--surface)),var(--surface) 62%)}
+.card-ic{background:var(--grad);color:var(--accent-text)}
+.quick a{background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 10%,var(--surface)),var(--surface));position:relative;overflow:hidden}
+.quick a::after{content:"";position:absolute;inset:auto 0 0 0;height:3px;background:var(--grad);opacity:.85}
+.quick a .ic{color:var(--accent2)}
+.eyebrow{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ask{background:radial-gradient(120% 100% at 50% 0%,color-mix(in srgb,var(--accent) 30%,transparent),transparent 70%),var(--surface)}
+.stars{color:var(--accent2)}
+.loc{background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 8%,var(--surface)),var(--surface))}
+.wave-div{display:block;width:100%;height:24px;margin:28px 0 -1px;fill:var(--band,var(--surface))}
+.wave-div+.sec{padding-top:12px;padding-bottom:20px;background:var(--band,var(--surface))}
+.wave-div+.sec+.wave-div{transform:scaleY(-1);margin:-1px 0 0}
+@media (prefers-reduced-motion:no-preference){.sun{animation:rise 1.4s cubic-bezier(.2,.8,.2,1) both}@keyframes rise{from{transform:translateY(40px);opacity:0}}}
+
+
+
+
+/* Logo donut hero */
+:root{--glaze:#F76D95;--glaze-hi:#FFB8CB;--glaze-lo:#E24C7B}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hero--plain:has(.ld-art){padding-top:250px;background:radial-gradient(60% 40% at 78% 16%,color-mix(in srgb,var(--glaze) 22%,transparent),transparent 70%),radial-gradient(50% 30% at 8% 30%,color-mix(in srgb,var(--h1) 14%,transparent),transparent 70%),var(--bg)}
+.hero--plain:has(.ld-art)::before{display:none}
+.ld-art{position:absolute;inset:0 0 auto 0;height:300px;z-index:-1;overflow:hidden}
+.ld{position:absolute;filter:drop-shadow(0 14px 22px color-mix(in srgb,var(--glaze-lo) 35%,transparent))}
+.ld-big{width:250px;height:250px;right:-40px;top:6px}
+.ld-small{width:90px;height:90px;left:24px;top:40px;opacity:.9}
+.ld-tiny{width:46px;height:46px;left:150px;top:150px;opacity:.75}
+.logo-title{display:flex;align-items:center;flex-wrap:wrap;font:400 clamp(46px,14vw,66px)/1 var(--display);color:var(--h1);letter-spacing:.01em;text-transform:uppercase;text-shadow:0 2px 0 color-mix(in srgb,var(--h1) 55%,#1d3b10)}
+.logo-title .lt{display:grid;gap:.04em}
+.logo-title .lt-row{display:flex;align-items:center;white-space:nowrap}
+.ld-o{width:.82em;height:.86em;margin:0 .02em;filter:drop-shadow(0 2px 0 color-mix(in srgb,var(--glaze-lo) 70%,#5a1030))}
+.hero--plain:has(.ld-art) .tag{color:#E5161E;font-weight:800;letter-spacing:.26em;text-transform:uppercase;font-size:13px;opacity:1;font-style:normal}
+@media (prefers-reduced-motion:no-preference){
+ .ld-big{animation:ldspin 24s linear infinite}.ld-small{animation:ldspin 16s linear infinite reverse,bob 5s ease-in-out infinite alternate}.ld-tiny{animation:bob 4s ease-in-out infinite alternate}
+ .ld-o{animation:ldspin 9s linear infinite}
+ @keyframes ldspin{to{transform:rotate(360deg)}}@keyframes bob{to{translate:0 -14px}}}
+
+/* Glaze drip transitions */
+.drip{height:46px;background:var(--to);margin-top:-1px}
+.drip svg{display:block;width:100%;height:100%;fill:var(--from);filter:drop-shadow(0 3px 0 color-mix(in srgb,var(--hl,var(--accent)) 70%,transparent))}
+@media (prefers-reduced-motion:no-preference){.drip svg{transform-origin:top;animation:ooze 6s ease-in-out infinite alternate}@keyframes ooze{to{transform:scaleY(1.12)}}}
+
+
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header class="hero hero--plain">
+    
+    <div class="ld-art" aria-hidden="true"><svg class="ld ld-big" viewBox="0 0 100 100" aria-hidden="true"><defs>
+  <mask id="ldA"><rect width="100" height="100" fill="#fff"/><circle cx="50" cy="51" r="16.5" fill="#000"/><circle cx="80" cy="15" r="11" fill="#000"/><circle cx="90" cy="27" r="8.5" fill="#000"/><circle cx="70" cy="9" r="7" fill="#000"/></mask>
+  <radialGradient id="ldAg" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="var(--glaze-hi)"/><stop offset=".55" stop-color="var(--glaze)"/><stop offset="1" stop-color="var(--glaze-lo)"/></radialGradient></defs>
+  <ellipse cx="50" cy="51" rx="41" ry="44" fill="url(#ldAg)" mask="url(#ldA)"/>
+  <ellipse cx="34" cy="28" rx="11" ry="5" fill="#fff" opacity=".35" transform="rotate(-35 34 28)"/></svg><svg class="ld ld-small" viewBox="0 0 100 100" aria-hidden="true"><defs>
+  <mask id="ldB"><rect width="100" height="100" fill="#fff"/><circle cx="50" cy="51" r="16.5" fill="#000"/><circle cx="80" cy="15" r="11" fill="#000"/><circle cx="90" cy="27" r="8.5" fill="#000"/><circle cx="70" cy="9" r="7" fill="#000"/></mask>
+  <radialGradient id="ldBg" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="var(--glaze-hi)"/><stop offset=".55" stop-color="var(--glaze)"/><stop offset="1" stop-color="var(--glaze-lo)"/></radialGradient></defs>
+  <ellipse cx="50" cy="51" rx="41" ry="44" fill="url(#ldBg)" mask="url(#ldB)"/>
+  <ellipse cx="34" cy="28" rx="11" ry="5" fill="#fff" opacity=".35" transform="rotate(-35 34 28)"/></svg><svg class="ld ld-tiny" viewBox="0 0 100 100" aria-hidden="true"><defs>
+  <mask id="ldC"><rect width="100" height="100" fill="#fff"/><circle cx="50" cy="51" r="16.5" fill="#000"/><circle cx="80" cy="15" r="11" fill="#000"/><circle cx="90" cy="27" r="8.5" fill="#000"/><circle cx="70" cy="9" r="7" fill="#000"/></mask>
+  <radialGradient id="ldCg" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="var(--glaze-hi)"/><stop offset=".55" stop-color="var(--glaze)"/><stop offset="1" stop-color="var(--glaze-lo)"/></radialGradient></defs>
+  <ellipse cx="50" cy="51" rx="41" ry="44" fill="url(#ldCg)" mask="url(#ldC)"/>
+  <ellipse cx="34" cy="28" rx="11" ry="5" fill="#fff" opacity=".35" transform="rotate(-35 34 28)"/></svg></div>
+    
+    <div class="hero-inner">
+      
+      <h1 class="logo-title"><span class="sr">Donut Worry</span><span aria-hidden="true" class="lt"><span class="lt-row">D<svg class="ld-o" viewBox="0 0 100 100" aria-hidden="true"><defs>
+  <mask id="ldT"><rect width="100" height="100" fill="#fff"/><circle cx="50" cy="51" r="16.5" fill="#000"/><circle cx="80" cy="15" r="11" fill="#000"/><circle cx="90" cy="27" r="8.5" fill="#000"/><circle cx="70" cy="9" r="7" fill="#000"/></mask>
+  <radialGradient id="ldTg" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="var(--glaze-hi)"/><stop offset=".55" stop-color="var(--glaze)"/><stop offset="1" stop-color="var(--glaze-lo)"/></radialGradient></defs>
+  <ellipse cx="50" cy="51" rx="41" ry="44" fill="url(#ldTg)" mask="url(#ldT)"/>
+  <ellipse cx="34" cy="28" rx="11" ry="5" fill="#fff" opacity=".35" transform="rotate(-35 34 28)"/></svg>NUT</span><span class="lt-row">WORRY</span></span></h1>
+      <p class="tag">Coffee &amp; Smoothies</p>
+      <p class="status" id="status" role="status"><i></i><span>See hours below</span></p>
+      <a class="btn btn-accent" href="https://order.online/store/567993" data-go="order" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.2A2 2 0 0 1 15.8 21H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>Order ahead</a>
+    </div>
+  </header>
+
+  
+
+  <nav aria-label="Quick actions">
+    <ul class="quick">
+      <li><a class="" href="https://order.online/store/567993" data-go="order" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.2A2 2 0 0 1 15.8 21H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span>Order online</span></a></li><li><a class="" href="#menu"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z"/></svg><span>Menu</span></a></li><li><a class="" href="https://www.google.com/maps/search/?api=1&amp;query=Donut+Worry+Coffee+%26+Smoothies+9115+E+Baseline+Rd+%23107+Mesa+AZ+85209" data-go="directions" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg><span>Directions</span></a></li><li><a class="" href="tel:+14806216600" data-go="call"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3.5l1.7 4.3-2.2 1.4a11 11 0 0 0 6.3 6.3l1.4-2.2L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.6A1.5 1.5 0 0 1 5 4z"/></svg><span>Call</span></a></li><li><a class="" href="https://www.google.com/maps/search/?api=1&amp;query=Donut+Worry+Coffee+%26+Smoothies+9115+E+Baseline+Rd+%23107+Mesa+AZ+85209" data-go="review" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.25 4.1 1 5.8L12 16.9l-5.25 2.7 1-5.8L3.5 9.7l5.9-.9z"/></svg><span>Review us</span></a></li><li><a class="" href="https://www.instagram.com/donutworryarizona/" data-go="instagram" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="drip" style="--from:var(--bg);--to:#FFF1F6" aria-hidden="true"><svg viewBox="0 0 400 46" preserveAspectRatio="none"><path d="M0 0H400V12c-8 0-10 4-11 11s-4 13-9 13-8-6-8-13-3-11-12-11H318c-7 0-9 3-10 9s-3 22-10 22-9-14-9-22-3-9-11-9H232c-6 0-8 3-9 7s-2 9-7 9-7-5-7-9-3-7-10-7H140c-7 0-9 4-10 12s-4 19-10 19-9-11-9-19-4-12-11-12H58c-6 0-8 3-9 8s-3 13-8 13-7-8-8-13-3-8-10-8H0z"/></svg></div><section style="--band-bg:#FFF1F6" class="sec band" aria-labelledby="f-h">
+      <div class="pad"><p class="eyebrow">Customer favorites</p><h2 id="f-h">The house favorites</h2></div>
+      <ul class="rail" aria-label="The house favorites">
+        <li class="card">
+          <img src="img/dozen.webp" alt="Mixed dozen: #3 most liked · 12 fresh donuts, glazed, frosted and filled" width="437" height="578" loading="lazy" decoding="async">
+          <div class="card-txt"><h3>Mixed dozen</h3><p>#3 most liked · 12 fresh donuts, glazed, frosted and filled</p><p class="card-price">$18.99</p></div>
+        </li>
+        <li class="card">
+          <img src="img/viet.webp" alt="Vietnamese Iced Coffee: 20 oz, strong coffee with sweetened condensed milk" width="437" height="578" loading="lazy" decoding="async">
+          <div class="card-txt"><h3>Vietnamese Iced Coffee</h3><p>20 oz, strong coffee with sweetened condensed milk</p><p class="card-price">$6.99</p></div>
+        </li>
+        <li class="card">
+          <img src="img/iced.webp" alt="Iced Coffee: #1 most liked · 20 oz, creamer and syrup included" width="437" height="578" loading="lazy" decoding="async">
+          <div class="card-txt"><h3>Iced Coffee</h3><p>#1 most liked · 20 oz, creamer and syrup included</p><p class="card-price">$4.49</p></div>
+        </li>
+        <li class="card">
+          <img src="img/milktea.webp" alt="Milk Tea: 20 oz with chewy tapioca pearls" width="437" height="578" loading="lazy" decoding="async">
+          <div class="card-txt"><h3>Milk Tea</h3><p>20 oz with chewy tapioca pearls</p><p class="card-price">$5.29</p></div>
+        </li>
+        <li class="card">
+          <img src="img/bec-croissant.webp" alt="Bacon, egg &amp; cheese croissant: Buttery croissant, made to order" width="437" height="578" loading="lazy" decoding="async">
+          <div class="card-txt"><h3>Bacon, egg &amp; cheese croissant</h3><p>Buttery croissant, made to order</p><p class="card-price">$7.99</p></div>
+        </li>
+        <li class="card">
+          <img src="img/six.webp" alt="Half dozen: Sprinkles, chocolate glaze and more" width="437" height="578" loading="lazy" decoding="async">
+          <div class="card-txt"><h3>Half dozen</h3><p>Sprinkles, chocolate glaze and more</p><p class="card-price">$10.99</p></div>
+        </li>
+      </ul>
+      <p class="hint pad">Swipe for more · items can sell out by late morning</p>
+    </section>
+
+    <div class="drip" style="--from:#FFF1F6;--to:#FFFFFF" aria-hidden="true"><svg viewBox="0 0 400 46" preserveAspectRatio="none"><path d="M0 0H400V12c-8 0-10 4-11 11s-4 13-9 13-8-6-8-13-3-11-12-11H318c-7 0-9 3-10 9s-3 22-10 22-9-14-9-22-3-9-11-9H232c-6 0-8 3-9 7s-2 9-7 9-7-5-7-9-3-7-10-7H140c-7 0-9 4-10 12s-4 19-10 19-9-11-9-19-4-12-11-12H58c-6 0-8 3-9 8s-3 13-8 13-7-8-8-13-3-8-10-8H0z"/></svg></div><section style="--band-bg:#FFFFFF" class="sec band pad" id="menu" aria-labelledby="m-h">
+      <h2 id="m-h">Menu</h2>
+      <nav class="chips" aria-label="Menu sections"><a href="#m-donuts">Donuts</a><a href="#m-breakfast">Breakfast</a><a href="#m-bites">Quick bites</a><a href="#m-coffee">Coffee</a><a href="#m-cold">Smoothies, tea &amp; more</a><a href="#m-bottles">Bottled drinks</a></nav>
+      <p class="hint">Tap a plate with a photo to see it up close. Prices from their online order menu.</p>
+      <section class="msec" id="m-donuts" aria-labelledby="mh-donuts">
+        <header><h3 id="mh-donuts">Donuts</h3><p>Made fresh daily</p></header>
+        <ul><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>1 Donut</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$1.79</dd></div></dl>
+        </li><li class="mi has-img" data-name="Half dozen" data-sec="Donuts" data-desc="" data-prices="[[&quot;&quot;,&quot;$10.99&quot;]]" data-big="img/m/big/six.webp">
+          <button class="mi-open" type="button" aria-label="See Half dozen"></button>
+          <img class="mi-img" src="img/m/six.webp" alt="" width="64" height="64" loading="lazy" decoding="async">
+          <div class="mi-main">
+            <h4>Half dozen</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$10.99</dd></div></dl>
+        </li><li class="mi has-img" data-name="Mixed dozen" data-sec="Donuts" data-desc="" data-prices="[[&quot;&quot;,&quot;$18.99&quot;]]" data-big="img/m/big/dozen.webp">
+          <button class="mi-open" type="button" aria-label="See Mixed dozen"></button>
+          <img class="mi-img" src="img/m/dozen.webp" alt="" width="64" height="64" loading="lazy" decoding="async">
+          <div class="mi-main">
+            <h4>Mixed dozen</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$18.99</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Big Apple Fritter</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$3.99</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Bear Claw</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$3.99</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Tiger Tail</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$3.99</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Donut holes · 1 dozen</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$2.79</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Donut holes · 5 dozen</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$13.99</dd></div></dl>
+        </li><li class="mi has-desc">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Pumpkin Cake Donut</h4>
+            
+            <p class="mi-desc">Seasonal.</p>
+          </div>
+          <dl class="mi-price"><div><dd>$1.99</dd></div></dl>
+        </li></ul>
+      </section><section class="msec" id="m-breakfast" aria-labelledby="mh-breakfast">
+        <header><h3 id="mh-breakfast">Breakfast</h3><p>Croissant sandwiches</p></header>
+        <ul><li class="mi has-desc has-img" data-name="Bacon, Sausage, Egg &amp; Cheese" data-sec="Breakfast" data-desc="Croissant or bagel." data-prices="[[&quot;&quot;,&quot;$7.99&quot;]]" data-big="img/m/big/bsec.webp">
+          <button class="mi-open" type="button" aria-label="See Bacon, Sausage, Egg &amp; Cheese"></button>
+          <img class="mi-img" src="img/m/bsec.webp" alt="" width="64" height="64" loading="lazy" decoding="async">
+          <div class="mi-main">
+            <h4>Bacon, Sausage, Egg &amp; Cheese</h4>
+            
+            <p class="mi-desc">Croissant or bagel.</p>
+          </div>
+          <dl class="mi-price"><div><dd>$7.99</dd></div></dl>
+        </li><li class="mi has-img" data-name="Bacon, Egg &amp; Cheese" data-sec="Breakfast" data-desc="" data-prices="[[&quot;&quot;,&quot;$7.99&quot;]]" data-big="img/m/big/bec-croissant.webp">
+          <button class="mi-open" type="button" aria-label="See Bacon, Egg &amp; Cheese"></button>
+          <img class="mi-img" src="img/m/bec-croissant.webp" alt="" width="64" height="64" loading="lazy" decoding="async">
+          <div class="mi-main">
+            <h4>Bacon, Egg &amp; Cheese</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$7.99</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Sausage, Egg &amp; Cheese</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$6.99</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Ham, Egg &amp; Cheese</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$6.99</dd></div></dl>
+        </li></ul>
+      </section><section class="msec" id="m-bites" aria-labelledby="mh-bites">
+        <header><h3 id="mh-bites">Quick bites</h3><p>Kolaches &amp; croissants</p></header>
+        <ul><li class="mi has-img" data-name="Sausage Kolache" data-sec="Quick bites" data-desc="" data-prices="[[&quot;&quot;,&quot;$3.99&quot;]]" data-big="img/m/big/kolache.webp">
+          <button class="mi-open" type="button" aria-label="See Sausage Kolache"></button>
+          <img class="mi-img" src="img/m/kolache.webp" alt="" width="64" height="64" loading="lazy" decoding="async">
+          <div class="mi-main">
+            <h4>Sausage Kolache</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$3.99</dd></div></dl>
+        </li><li class="mi has-desc has-img" data-name="Jalapeño Sausage Kolache" data-sec="Quick bites" data-desc="Spicy." data-prices="[[&quot;&quot;,&quot;$3.99&quot;]]" data-big="img/m/big/jal-kolache.webp">
+          <button class="mi-open" type="button" aria-label="See Jalapeño Sausage Kolache"></button>
+          <img class="mi-img" src="img/m/jal-kolache.webp" alt="" width="64" height="64" loading="lazy" decoding="async">
+          <div class="mi-main">
+            <h4>Jalapeño Sausage Kolache</h4>
+            
+            <p class="mi-desc">Spicy.</p>
+          </div>
+          <dl class="mi-price"><div><dd>$3.99</dd></div></dl>
+        </li><li class="mi has-img" data-name="Ham &amp; Cheese Croissant" data-sec="Quick bites" data-desc="" data-prices="[[&quot;&quot;,&quot;$4.99&quot;]]" data-big="img/m/big/hc-croissant.webp">
+          <button class="mi-open" type="button" aria-label="See Ham &amp; Cheese Croissant"></button>
+          <img class="mi-img" src="img/m/hc-croissant.webp" alt="" width="64" height="64" loading="lazy" decoding="async">
+          <div class="mi-main">
+            <h4>Ham &amp; Cheese Croissant</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$4.99</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Ham, Cheese &amp; Jalapeño Croissant</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$4.99</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Bagel</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$1.00</dd></div></dl>
+        </li></ul>
+      </section><section class="msec" id="m-coffee" aria-labelledby="mh-coffee">
+        <header><h3 id="mh-coffee">Coffee</h3><p>Hot &amp; iced</p></header>
+        <ul><li class="mi has-desc has-img" data-name="Vietnamese Iced Coffee" data-sec="Coffee" data-desc="20 oz." data-prices="[[&quot;&quot;,&quot;$6.99&quot;]]" data-big="img/m/big/viet.webp">
+          <button class="mi-open" type="button" aria-label="See Vietnamese Iced Coffee"></button>
+          <img class="mi-img" src="img/m/viet.webp" alt="" width="64" height="64" loading="lazy" decoding="async">
+          <div class="mi-main">
+            <h4>Vietnamese Iced Coffee</h4>
+            
+            <p class="mi-desc">20 oz.</p>
+          </div>
+          <dl class="mi-price"><div><dd>$6.99</dd></div></dl>
+        </li><li class="mi has-desc">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Pumpkin Spice Vietnamese Iced Coffee</h4>
+            
+            <p class="mi-desc">Seasonal.</p>
+          </div>
+          <dl class="mi-price"><div><dd>$6.99</dd></div></dl>
+        </li><li class="mi has-desc has-img" data-name="Iced Coffee" data-sec="Coffee" data-desc="20 oz." data-prices="[[&quot;&quot;,&quot;$4.49&quot;]]" data-big="img/m/big/iced.webp">
+          <button class="mi-open" type="button" aria-label="See Iced Coffee"></button>
+          <img class="mi-img" src="img/m/iced.webp" alt="" width="64" height="64" loading="lazy" decoding="async">
+          <div class="mi-main">
+            <h4>Iced Coffee</h4>
+            
+            <p class="mi-desc">20 oz.</p>
+          </div>
+          <dl class="mi-price"><div><dd>$4.49</dd></div></dl>
+        </li><li class="mi has-desc">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Hot Cappuccino</h4>
+            
+            <p class="mi-desc">16 oz.</p>
+          </div>
+          <dl class="mi-price"><div><dd>$3.29</dd></div></dl>
+        </li><li class="mi has-desc">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Hot Coffee</h4>
+            
+            <p class="mi-desc">16 oz.</p>
+          </div>
+          <dl class="mi-price"><div><dd>$2.79</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Hot Tea</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$1.25</dd></div></dl>
+        </li></ul>
+      </section><section class="msec" id="m-cold" aria-labelledby="mh-cold">
+        <header><h3 id="mh-cold">Smoothies, tea &amp; more</h3><p>20 oz unless noted</p></header>
+        <ul><li class="mi has-desc">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Matcha Iced Latte</h4>
+            
+            <p class="mi-desc">16 oz.</p>
+          </div>
+          <dl class="mi-price"><div><dd>$6.49</dd></div></dl>
+        </li><li class="mi has-desc">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Strawberry Matcha Iced Latte</h4>
+            
+            <p class="mi-desc">16 oz.</p>
+          </div>
+          <dl class="mi-price"><div><dd>$6.49</dd></div></dl>
+        </li><li class="mi has-img" data-name="Ice Energy Reboot" data-sec="Smoothies, tea &amp; more" data-desc="" data-prices="[[&quot;&quot;,&quot;$5.99&quot;]]" data-big="img/m/big/energy.webp">
+          <button class="mi-open" type="button" aria-label="See Ice Energy Reboot"></button>
+          <img class="mi-img" src="img/m/energy.webp" alt="" width="64" height="64" loading="lazy" decoding="async">
+          <div class="mi-main">
+            <h4>Ice Energy Reboot</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$5.99</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Smoothie</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$5.69</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Iced Blended Drink</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$5.69</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Brown Sugar Milk Tea</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$5.49</dd></div></dl>
+        </li><li class="mi has-img" data-name="Milk Tea" data-sec="Smoothies, tea &amp; more" data-desc="" data-prices="[[&quot;&quot;,&quot;$5.29&quot;]]" data-big="img/m/big/milktea.webp">
+          <button class="mi-open" type="button" aria-label="See Milk Tea"></button>
+          <img class="mi-img" src="img/m/milktea.webp" alt="" width="64" height="64" loading="lazy" decoding="async">
+          <div class="mi-main">
+            <h4>Milk Tea</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$5.29</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Fruit Tea</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$5.29</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Fruit Lemonade</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$4.99</dd></div></dl>
+        </li></ul>
+      </section><section class="msec" id="m-bottles" aria-labelledby="mh-bottles">
+        <header><h3 id="mh-bottles">Bottled drinks</h3></header>
+        <ul><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Monster</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$3.79</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Red Bull</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$3.79</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Shamrock Milk</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$2.60</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Martinelli&#39;s Apple Juice</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$2.59</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Sunny D</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$1.79</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Juice Box</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$1.50</dd></div></dl>
+        </li><li class="mi">
+          
+          <span class="dot" aria-hidden="true"></span>
+          <div class="mi-main">
+            <h4>Water</h4>
+            
+            
+          </div>
+          <dl class="mi-price"><div><dd>$1.25</dd></div></dl>
+        </li></ul>
+      </section>
+      <p class="mfoot">Donut worry, be happy.</p>
+      <div class="menu-box menu-box--extras">
+        
+        
+        
+        <a class="btn btn-ghost" href="https://order.online/store/567993" data-go="order" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.2A2 2 0 0 1 15.8 21H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>Order online</a>
+        
+      </div>
+    </section>
+
+    <div class="drip" style="--from:#FFFFFF;--to:#FFF1F6" aria-hidden="true"><svg viewBox="0 0 400 46" preserveAspectRatio="none"><path d="M0 0H400V12c-8 0-10 4-11 11s-4 13-9 13-8-6-8-13-3-11-12-11H318c-7 0-9 3-10 9s-3 22-10 22-9-14-9-22-3-9-11-9H232c-6 0-8 3-9 7s-2 9-7 9-7-5-7-9-3-7-10-7H140c-7 0-9 4-10 12s-4 19-10 19-9-11-9-19-4-12-11-12H58c-6 0-8 3-9 8s-3 13-8 13-7-8-8-13-3-8-10-8H0z"/></svg></div><section style="--band-bg:#FFF1F6" class="sec band pad" id="promos" aria-label="Specials" hidden>
+      <article class="promo has-ic" data-start="" data-end="" hidden>
+        <p class="eyebrow">Saturdays</p>
+        <span class="promo-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="2.6"/><path d="M6.5 9.5l1 .6M15.5 7.5l.4 1.1M16.8 14.2l-1 .5M9 16.6l.9-.8"/></svg></span><h3>Malasadas after 7 AM</h3>
+        <p>Hawaiian-style malasadas, Saturdays only, while they last.</p>
+        <a class="btn btn-accent" href="https://www.google.com/maps/search/?api=1&amp;query=Donut+Worry+Coffee+%26+Smoothies+9115+E+Baseline+Rd+%23107+Mesa+AZ+85209" data-go="directions" target="_blank" rel="noopener">Get directions</a>
+      </article>
+      <article class="promo has-ic" data-start="" data-end="" hidden>
+        <p class="eyebrow">Skip the line</p>
+        <span class="promo-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.2A2 2 0 0 1 15.8 21H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></span><h3>Order ahead for pickup</h3>
+        <p>Ordering opens at 5 AM. Your box is ready when you walk in.</p>
+        <a class="btn btn-accent" href="https://order.online/store/567993" data-go="order" target="_blank" rel="noopener">Order ahead</a>
+      </article></section>
+
+    <div class="drip" style="--from:#FFF1F6;--to:#FFFFFF" aria-hidden="true"><svg viewBox="0 0 400 46" preserveAspectRatio="none"><path d="M0 0H400V12c-8 0-10 4-11 11s-4 13-9 13-8-6-8-13-3-11-12-11H318c-7 0-9 3-10 9s-3 22-10 22-9-14-9-22-3-9-11-9H232c-6 0-8 3-9 7s-2 9-7 9-7-5-7-9-3-7-10-7H140c-7 0-9 4-10 12s-4 19-10 19-9-11-9-19-4-12-11-12H58c-6 0-8 3-9 8s-3 13-8 13-7-8-8-13-3-8-10-8H0z"/></svg></div><section style="--band-bg:#FFFFFF" class="sec band pad" aria-labelledby="r-h">
+      <div class="ask">
+        <div class="stars" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.25 4.1 1 5.8L12 16.9l-5.25 2.7 1-5.8L3.5 9.7l5.9-.9z"/></svg><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.25 4.1 1 5.8L12 16.9l-5.25 2.7 1-5.8L3.5 9.7l5.9-.9z"/></svg><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.25 4.1 1 5.8L12 16.9l-5.25 2.7 1-5.8L3.5 9.7l5.9-.9z"/></svg><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.25 4.1 1 5.8L12 16.9l-5.25 2.7 1-5.8L3.5 9.7l5.9-.9z"/></svg><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.25 4.1 1 5.8L12 16.9l-5.25 2.7 1-5.8L3.5 9.7l5.9-.9z"/></svg></div>
+        <h2 id="r-h" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Leave a review</h2>
+        <p>Made your morning? A quick Google review helps this local shop more than you know.</p>
+        <a class="btn btn-accent" href="https://www.google.com/maps/search/?api=1&amp;query=Donut+Worry+Coffee+%26+Smoothies+9115+E+Baseline+Rd+%23107+Mesa+AZ+85209" data-go="review" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.25 4.1 1 5.8L12 16.9l-5.25 2.7 1-5.8L3.5 9.7l5.9-.9z"/></svg>Leave a review</a>
+      </div>
+    </section>
+
+    <div class="drip" style="--from:#FFFFFF;--to:#FFF1F6" aria-hidden="true"><svg viewBox="0 0 400 46" preserveAspectRatio="none"><path d="M0 0H400V12c-8 0-10 4-11 11s-4 13-9 13-8-6-8-13-3-11-12-11H318c-7 0-9 3-10 9s-3 22-10 22-9-14-9-22-3-9-11-9H232c-6 0-8 3-9 7s-2 9-7 9-7-5-7-9-3-7-10-7H140c-7 0-9 4-10 12s-4 19-10 19-9-11-9-19-4-12-11-12H58c-6 0-8 3-9 8s-3 13-8 13-7-8-8-13-3-8-10-8H0z"/></svg></div><section style="--band-bg:#FFF1F6" class="sec band pad" id="visit" aria-labelledby="v-h">
+      <h2 id="v-h">Visit us</h2>
+      <div class="visit">
+        <a class="row" href="https://www.google.com/maps/search/?api=1&amp;query=Donut+Worry+Coffee+%26+Smoothies+9115+E+Baseline+Rd+%23107+Mesa+AZ+85209" data-go="directions" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg><div><b>9115 E Baseline Rd #107</b><small>Mesa, AZ 85209 · Get directions</small></div></a>
+        <a class="row" href="tel:+14806216600" data-go="call"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3.5l1.7 4.3-2.2 1.4a11 11 0 0 0 6.3 6.3l1.4-2.2L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.6A1.5 1.5 0 0 1 5 4z"/></svg><div><b>(480) 621-6600</b><small>Tap to call</small></div></a>
+        <ul class="hours" aria-label="Opening hours"><li data-day="mon"><span>Monday</span><span>5 AM – 2 PM</span></li><li data-day="tue"><span>Tuesday</span><span>5 AM – 2 PM</span></li><li data-day="wed"><span>Wednesday</span><span>5 AM – 2 PM</span></li><li data-day="thu"><span>Thursday</span><span>5 AM – 2 PM</span></li><li data-day="fri"><span>Friday</span><span>5 AM – 2 PM</span></li><li data-day="sat"><span>Saturday</span><span>5 AM – 2 PM</span></li><li data-day="sun"><span>Sunday</span><span>5 AM – 2 PM</span></li></ul>
+      </div>
+    </section>
+
+    <div class="drip" style="--from:#FFF1F6;--to:#FFFFFF" aria-hidden="true"><svg viewBox="0 0 400 46" preserveAspectRatio="none"><path d="M0 0H400V12c-8 0-10 4-11 11s-4 13-9 13-8-6-8-13-3-11-12-11H318c-7 0-9 3-10 9s-3 22-10 22-9-14-9-22-3-9-11-9H232c-6 0-8 3-9 7s-2 9-7 9-7-5-7-9-3-7-10-7H140c-7 0-9 4-10 12s-4 19-10 19-9-11-9-19-4-12-11-12H58c-6 0-8 3-9 8s-3 13-8 13-7-8-8-13-3-8-10-8H0z"/></svg></div><section style="--band-bg:#FFFFFF" class="sec band pad" aria-labelledby="s-h">
+      <h2 id="s-h">Follow along</h2>
+      <div class="social"><a class="" href="https://www.instagram.com/donutworryarizona/" data-go="instagram" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a></div>
+    </section>
+  <div class="drip" style="--from:#FFFFFF;--to:var(--bg)" aria-hidden="true"><svg viewBox="0 0 400 46" preserveAspectRatio="none"><path d="M0 0H400V12c-8 0-10 4-11 11s-4 13-9 13-8-6-8-13-3-11-12-11H318c-7 0-9 3-10 9s-3 22-10 22-9-14-9-22-3-9-11-9H232c-6 0-8 3-9 7s-2 9-7 9-7-5-7-9-3-7-10-7H140c-7 0-9 4-10 12s-4 19-10 19-9-11-9-19-4-12-11-12H58c-6 0-8 3-9 8s-3 13-8 13-7-8-8-13-3-8-10-8H0z"/></svg></div></main>
+
+  <footer>
+    <span>© 2026 Donut Worry · Mesa, AZ</span>
+    
+  </footer>
+</div>
+
+<dialog class="dish" id="dish" aria-labelledby="dish-name">
+  <form method="dialog" class="dish-in">
+    <figure class="dish-fig"><img id="dish-img" alt="" width="640" height="480"><button class="dish-x" value="close" aria-label="Close">×</button></figure>
+    <div class="dish-body">
+      <p class="eyebrow" id="dish-sec"></p>
+      <h3 id="dish-name"></h3>
+      <p class="dish-desc" id="dish-desc"></p>
+      <div class="dish-prices" id="dish-prices"></div>
+      <a class="btn btn-accent dish-cta" href="https://order.online/store/567993" data-go="order" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.2A2 2 0 0 1 15.8 21H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>Order this online</a>
+      <div class="dish-nav"><button type="button" class="btn btn-ghost" id="dish-prev" aria-label="Previous dish">‹ Prev</button><button type="button" class="btn btn-ghost" id="dish-next" aria-label="Next dish">Next ›</button></div>
+    </div>
+  </form>
+</dialog>
+
+<div class="sb" id="sb"><nav aria-label="Main actions"><a class="sb-btn is-primary" href="https://order.online/store/567993" data-go="order" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.2A2 2 0 0 1 15.8 21H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span>Order</span></a><a class="sb-btn" href="#menu"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z"/></svg><span>Menu</span></a><a class="sb-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Donut+Worry+Coffee+%26+Smoothies+9115+E+Baseline+Rd+%23107+Mesa+AZ+85209" data-go="directions" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg><span>Directions</span></a><a class="sb-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Donut+Worry+Coffee+%26+Smoothies+9115+E+Baseline+Rd+%23107+Mesa+AZ+85209" data-go="review" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.25 4.1 1 5.8L12 16.9l-5.25 2.7 1-5.8L3.5 9.7l5.9-.9z"/></svg><span>Review</span></a></nav></div>
+
+
+
+<script>
+(() => {
+  const C = {"slug":"donut-worry","analytics":"auto","tz":"America/Phoenix","hours":{"sun":[["05:00","14:00"]],"mon":[["05:00","14:00"]],"tue":[["05:00","14:00"]],"wed":[["05:00","14:00"]],"thu":[["05:00","14:00"]],"fri":[["05:00","14:00"]],"sat":[["05:00","14:00"]]},"links":{"menu":"","review":"https://www.google.com/maps/search/?api=1&query=Donut+Worry+Coffee+%26+Smoothies+9115+E+Baseline+Rd+%23107+Mesa+AZ+85209","directions":"https://www.google.com/maps/search/?api=1&query=Donut+Worry+Coffee+%26+Smoothies+9115+E+Baseline+Rd+%23107+Mesa+AZ+85209","call":"tel:+14806216600","instagram":"https://www.instagram.com/donutworryarizona/","order":"https://order.online/store/567993"}};
+
+  // 1) When deployed at /<slug>/, route every outbound tap through /<slug>/go/<key> (editable + countable).
+  const path = location.pathname.replace(/index\.html$/, "");
+  const deployed = path.replace(/\/+$/, "").endsWith("/" + C.slug);
+  if (deployed) {
+    const base = path.endsWith("/") ? path : path + "/";
+    document.querySelectorAll("a[data-go]").forEach(el => {
+      if (!el.dataset.go.startsWith("call")) el.href = base + "go/" + el.dataset.go + "/";
+    });
+    if (C.analytics === "vercel" || (C.analytics === "auto" && /\.vercel\.app$/.test(location.hostname))) {
+      const s = document.createElement("script"); s.defer = true; s.src = "/_vercel/insights/script.js"; document.head.appendChild(s);
+    }
+  }
+
+  // 2) Open-now badge, computed in the restaurant's time zone.
+  const DAYS = ["sun","mon","tue","wed","thu","fri","sat"];
+  const nowIn = tz => {
+    const p = Object.fromEntries(new Intl.DateTimeFormat("en-US", { timeZone: tz, weekday: "short", hour: "numeric", minute: "numeric", hourCycle: "h23", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(new Date()).map(x => [x.type, x.value]));
+    return { day: DAYS.indexOf(p.weekday.slice(0,3).toLowerCase()), min: (+p.hour % 24) * 60 + +p.minute, date: p.year + "-" + p.month + "-" + p.day };
+  };
+  const toMin = t => { const [h, m] = t.split(":").map(Number); return h * 60 + m; };
+  const fmt = m => { const h = Math.floor(m / 60) % 24, mm = m % 60; return ((h + 11) % 12 + 1) + (mm ? ":" + String(mm).padStart(2, "0") : "") + (h < 12 ? " AM" : " PM"); };
+  window.__statusAt = (day, min) => {
+    const today = C.hours[DAYS[day]] || [];
+    for (const [o, c] of today) {
+      const om = toMin(o), cm = toMin(c) <= om ? toMin(c) + 1440 : toMin(c);
+      if (min >= om && min < cm) return { open: true, text: "Open now · closes " + fmt(cm) };
+    }
+    // still open from yesterday's after-midnight shift?
+    for (const [o, c] of C.hours[DAYS[(day + 6) % 7]] || []) {
+      if (toMin(c) <= toMin(o) && min < toMin(c)) return { open: true, text: "Open now · closes " + fmt(toMin(c)) };
+    }
+    for (const [o] of today) if (min < toMin(o)) return { open: false, text: "Closed · opens today at " + fmt(toMin(o)) };
+    for (let i = 1; i <= 7; i++) {
+      const d = (day + i) % 7, r = C.hours[DAYS[d]] || [];
+      if (r.length) return { open: false, text: "Closed · opens " + (i === 1 ? "tomorrow" : ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][d]) + " at " + fmt(toMin(r[0][0])) };
+    }
+    return { open: false, text: "Closed" };
+  };
+  const n = nowIn(C.tz);
+  const st = window.__statusAt(n.day, n.min);
+  const badge = document.getElementById("status");
+  if (badge && Object.values(C.hours || {}).some(r => r && r.length)) { badge.querySelector("span").textContent = (badge.dataset.prefix || "") + st.text; badge.classList.toggle("open", st.open); }
+  const todayRow = document.querySelector('.hours li[data-day="' + DAYS[n.day] + '"]');
+  if (todayRow) todayRow.classList.add("today");
+
+  // 3) Promos show only inside their date window.
+  let anyPromo = false;
+  document.querySelectorAll(".promo").forEach(p => {
+    const ok = (!p.dataset.start || n.date >= p.dataset.start) && (!p.dataset.end || n.date <= p.dataset.end);
+    p.hidden = !ok; anyPromo ||= ok;
+  });
+  const promoSec = document.getElementById("promos");
+  if (promoSec) promoSec.hidden = !anyPromo;
+
+  // 4) Sticky bar appears once the hero scrolls away.
+  const sb = document.getElementById("sb"), hero = document.querySelector(".hero");
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([e]) => sb.classList.toggle("show", !e.isIntersecting), { threshold: 0.15 }).observe(hero);
+  } else sb.classList.add("show");
+
+  // 4b) Highlight the menu chip for the section in view.
+  const chips = [...document.querySelectorAll(".chips a")];
+  if (chips.length && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) chips.forEach(ch => ch.classList.toggle("on", ch.getAttribute("href") === "#" + e.target.id));
+    }), { rootMargin: "-30% 0px -60% 0px" });
+    document.querySelectorAll(".msec").forEach(s => io.observe(s));
+  }
+
+  // 4b2) Gentle reveal as sections enter the screen (content stays visible without JS).
+  if (true && "IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const els = document.querySelectorAll(".loc");
+    els.forEach(el => el.classList.add("reveal"));
+    document.documentElement.classList.add("js");
+    const ro = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); ro.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
+    els.forEach(el => { if (el.getBoundingClientRect().top < innerHeight) el.classList.add("in"); ro.observe(el); });
+  }
+
+  // 4c) Dish preview sheet.
+  const dish = document.getElementById("dish");
+  if (dish) {
+    const list = [...document.querySelectorAll(".mi[data-big]")];
+    let idx = 0, opener = null;
+    const show = i => {
+      idx = (i + list.length) % list.length;
+      const d = list[idx].dataset;
+      const img = document.getElementById("dish-img");
+      img.src = d.big; img.alt = d.name;
+      document.getElementById("dish-sec").textContent = d.sec;
+      document.getElementById("dish-name").textContent = d.name;
+      document.getElementById("dish-desc").textContent = d.desc;
+      const pr = document.getElementById("dish-prices"); pr.textContent = "";
+      JSON.parse(d.prices || "[]").forEach(([sz, p]) => {
+        const s = document.createElement("span");
+        if (sz) { const sm = document.createElement("small"); sm.textContent = sz; s.appendChild(sm); }
+        s.appendChild(document.createTextNode(p)); pr.appendChild(s);
+      });
+    };
+    list.forEach((li, i) => li.querySelector(".mi-open").addEventListener("click", e => {
+      opener = e.currentTarget; show(i); dish.showModal(); dish.scrollTop = 0;
+    }));
+    document.getElementById("dish-prev").addEventListener("click", () => show(idx - 1));
+    document.getElementById("dish-next").addEventListener("click", () => show(idx + 1));
+    dish.addEventListener("click", e => { if (e.target === dish) dish.close(); });
+    dish.addEventListener("close", () => opener && opener.focus());
+    let x0 = null;
+    dish.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; }, { passive: true });
+    dish.addEventListener("touchend", e => {
+      if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) > 60) show(idx + (dx < 0 ? 1 : -1));
+    });
+  }
+
+  // 5) Menu viewer (only when a menu image is configured).
+  const dlg = document.getElementById("menuDlg"), opener = document.getElementById("menuOpen");
+  if (dlg && opener) {
+    opener.addEventListener("click", () => dlg.showModal());
+    dlg.querySelector(".close").addEventListener("click", () => dlg.close());
+    dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener("close", () => opener.focus());
+  }
+})();
+</script>
+
+</body>
+</html>
