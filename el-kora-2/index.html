@@ -1391,13 +1391,12 @@ footer a{color:var(--muted)}
 
 <script>
 (() => {
-  const C = {"slug":"el-kora-2","analytics":"auto","tz":"America/Phoenix","hours":{"sun":[["09:00","00:00"]],"mon":[["09:00","00:00"]],"tue":[["09:00","00:00"]],"wed":[["09:00","00:00"]],"thu":[["09:00","00:00"]],"fri":[["09:00","00:00"]],"sat":[["09:00","00:00"]]},"links":{"menu":"","review":"https://search.google.com/local/writereview?placeid=ChIJx4-OrTkVK4cRXzm1a2YMzMM","directions":"https://www.google.com/maps/search/?api=1&query=Mariscos+y+Sushi+El+Kora+2151+N+83rd+Ave+Phoenix+AZ+85037&query_place_id=ChIJx4-OrTkVK4cRXzm1a2YMzMM","call":"tel:+16025004466","instagram":"https://www.instagram.com/sushielkora/","order":"https://sushielkora.com/menu/mariscosysushielkora2-kxk31o","facebook":"https://www.facebook.com/profile.php?id=61564187591464","website":"https://sushielkora.com/","app":"https://mariscosysushielkorabq2w.app.ordersave.com/download-app"}};
+  const C = {"live":true,"slug":"el-kora-2","analytics":"auto","tz":"America/Phoenix","hours":{"sun":[["09:00","00:00"]],"mon":[["09:00","00:00"]],"tue":[["09:00","00:00"]],"wed":[["09:00","00:00"]],"thu":[["09:00","00:00"]],"fri":[["09:00","00:00"]],"sat":[["09:00","00:00"]]},"links":{"menu":"","review":"https://search.google.com/local/writereview?placeid=ChIJx4-OrTkVK4cRXzm1a2YMzMM","directions":"https://www.google.com/maps/search/?api=1&query=Mariscos+y+Sushi+El+Kora+2151+N+83rd+Ave+Phoenix+AZ+85037&query_place_id=ChIJx4-OrTkVK4cRXzm1a2YMzMM","call":"tel:+16025004466","instagram":"https://www.instagram.com/sushielkora/","order":"https://sushielkora.com/menu/mariscosysushielkora2-kxk31o","facebook":"https://www.facebook.com/profile.php?id=61564187591464","website":"https://sushielkora.com/","app":"https://mariscosysushielkorabq2w.app.ordersave.com/download-app"}};
 
   // 1) When deployed at /<slug>/, route every outbound tap through /<slug>/go/<key> (editable + countable).
   const path = location.pathname.replace(/index\.html$/, "");
-  const deployed = path.replace(/\/+$/, "").endsWith("/" + C.slug);
-  if (deployed) {
-    const base = path.endsWith("/") ? path : path + "/";
+  if (C.live) {
+    const base = path.endsWith("/") ? path : path.replace(/[^/]*$/, "");
     document.querySelectorAll("a[data-go]").forEach(el => {
       if (!el.dataset.go.startsWith("call")) el.href = base + "go/" + el.dataset.go + "/";
     });

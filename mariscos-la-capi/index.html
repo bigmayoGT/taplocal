@@ -841,13 +841,12 @@ footer a{color:var(--muted)}
 
 <script>
 (() => {
-  const C = {"slug":"mariscos-la-capi","analytics":"auto","tz":"America/Phoenix","hours":{"mon":[["10:00","22:00"]],"tue":[["10:00","22:00"]],"wed":[["10:00","22:00"]],"thu":[["10:00","22:00"]],"fri":[["10:00","00:00"]],"sat":[["10:00","00:00"]],"sun":[["10:00","00:00"]]},"links":{"menu":"","review":"https://www.google.com/maps/search/?api=1&query=Mariscos+La+Capi+5510+W+Camelback+Rd+Phoenix+AZ","directions":"https://www.google.com/maps/search/?api=1&query=Mariscos+La+Capi+5510+W+Camelback+Rd+Phoenix+AZ","call":"tel:+16024158869","instagram":"https://www.instagram.com/mariscoslacapi/","order":"https://www.mariscoslacapi.com/","website":"https://www.mariscoslacapi.com/"}};
+  const C = {"live":true,"slug":"mariscos-la-capi","analytics":"auto","tz":"America/Phoenix","hours":{"mon":[["10:00","22:00"]],"tue":[["10:00","22:00"]],"wed":[["10:00","22:00"]],"thu":[["10:00","22:00"]],"fri":[["10:00","00:00"]],"sat":[["10:00","00:00"]],"sun":[["10:00","00:00"]]},"links":{"menu":"","review":"https://www.google.com/maps/search/?api=1&query=Mariscos+La+Capi+5510+W+Camelback+Rd+Phoenix+AZ","directions":"https://www.google.com/maps/search/?api=1&query=Mariscos+La+Capi+5510+W+Camelback+Rd+Phoenix+AZ","call":"tel:+16024158869","instagram":"https://www.instagram.com/mariscoslacapi/","order":"https://www.mariscoslacapi.com/","website":"https://www.mariscoslacapi.com/"}};
 
   // 1) When deployed at /<slug>/, route every outbound tap through /<slug>/go/<key> (editable + countable).
   const path = location.pathname.replace(/index\.html$/, "");
-  const deployed = path.replace(/\/+$/, "").endsWith("/" + C.slug);
-  if (deployed) {
-    const base = path.endsWith("/") ? path : path + "/";
+  if (C.live) {
+    const base = path.endsWith("/") ? path : path.replace(/[^/]*$/, "");
     document.querySelectorAll("a[data-go]").forEach(el => {
       if (!el.dataset.go.startsWith("call")) el.href = base + "go/" + el.dataset.go + "/";
     });

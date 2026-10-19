@@ -358,13 +358,12 @@ footer a{color:var(--muted)}
 
 <script>
 (() => {
-  const C = {"slug":"rojin-sushi","analytics":"auto","tz":"America/Phoenix","hours":{"sun":[],"mon":[],"tue":[["12:00","21:00"]],"wed":[["12:00","21:00"]],"thu":[["12:00","21:00"]],"fri":[["12:00","21:00"]],"sat":[["12:00","21:00"]]},"links":{"menu":"https://www.instagram.com/rojin.sushi/","review":"https://www.google.com/maps/place/Rojin+Sushi,+10179+S+Frontage+Rd,+Yuma,+AZ+85365/@32.6699374,-114.4595952,16z/data=!4m6!3m5!1s0x80d661b401402e09:0x5a73963433b349f!8m2!3d32.6699374!4d-114.4595952!16s%2Fg%2F11z774h25b","directions":"https://maps.app.goo.gl/QNFPkesMW1PpRuQM6","call":"tel:+19285089736","instagram":"https://www.instagram.com/rojin.sushi/"}};
+  const C = {"live":true,"slug":"rojin-sushi","analytics":"auto","tz":"America/Phoenix","hours":{"sun":[],"mon":[],"tue":[["12:00","21:00"]],"wed":[["12:00","21:00"]],"thu":[["12:00","21:00"]],"fri":[["12:00","21:00"]],"sat":[["12:00","21:00"]]},"links":{"menu":"https://www.instagram.com/rojin.sushi/","review":"https://www.google.com/maps/place/Rojin+Sushi,+10179+S+Frontage+Rd,+Yuma,+AZ+85365/@32.6699374,-114.4595952,16z/data=!4m6!3m5!1s0x80d661b401402e09:0x5a73963433b349f!8m2!3d32.6699374!4d-114.4595952!16s%2Fg%2F11z774h25b","directions":"https://maps.app.goo.gl/QNFPkesMW1PpRuQM6","call":"tel:+19285089736","instagram":"https://www.instagram.com/rojin.sushi/"}};
 
   // 1) When deployed at /<slug>/, route every outbound tap through /<slug>/go/<key> (editable + countable).
   const path = location.pathname.replace(/index\.html$/, "");
-  const deployed = path.replace(/\/+$/, "").endsWith("/" + C.slug);
-  if (deployed) {
-    const base = path.endsWith("/") ? path : path + "/";
+  if (C.live) {
+    const base = path.endsWith("/") ? path : path.replace(/[^/]*$/, "");
     document.querySelectorAll("a[data-go]").forEach(el => {
       if (!el.dataset.go.startsWith("call")) el.href = base + "go/" + el.dataset.go + "/";
     });
