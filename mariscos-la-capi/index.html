@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Mariscos La Capi</title>
+<title>Mariscos La Capi · Del mar a tu paladar</title>
 <meta name="description" content="Mariscos La Capi · Culiacán-style mariscos at 5510 W Camelback Rd, Glendale, AZ 85301. Menu, directions, hours and reviews.">
-<meta name="theme-color" content="#092c31">
+<meta name="theme-color" content="#081a3e">
 <meta property="og:title" content="Mariscos La Capi">
 <meta property="og:description" content="Del mar a tu paladar · 5510 W Camelback Rd, Glendale, AZ 85301">
 <meta property="og:image" content="img/hero.webp">
@@ -261,7 +261,7 @@ footer a{color:var(--muted)}
 </style>
 <link rel="stylesheet" href="coastal.css">
 </head>
-<body>
+<body id="top">
 
 
 <div class="wrap">
@@ -275,14 +275,15 @@ footer a{color:var(--muted)}
     <div class="hero-inner">
       <p class="eyebrow">CULIACÁN SOUL. ARIZONA HOME.</p>
       <h1>Del mar<br>a tu <em>paladar.</em></h1>
-      <p class="tag">A little coast. A little chile.<br>A whole lot of La Capi.</p>
-      <p class="hero-description">Aguachiles, fresh tostadas, and ice-cold ballenas. <br>Pull up a chair. This is meant to be shared.</p>
+      <p class="tag">Mariscos con carácter.<br>Momentos para compartir.</p>
+      <p class="hero-description">Aguachiles, tostadas, and ice-cold ballenas. <br>Culiacán flavor, served with a little Arizona soul.</p>
       <div class="hero-actions"><a class="btn btn-accent" href="#menu">Explore the menu <span aria-hidden="true">↗</span></a><a class="hero-visit" href="#visit">Come find us <span aria-hidden="true">→</span></a></div>
       <p class="status" id="status" role="status" data-prefix="Restaurante: "><i></i><span>See hours below</span></p>
     </div>
     <div class="hero-visual"><img src="img/hero.webp" alt="Aguachiles and chile-rimmed ballenas on a table at Mariscos La Capi" fetchpriority="high" width="1100" height="1478"><div class="photo-caption"><span>THE TABLE IS SET.</span><span>Glendale, Arizona ↗</span></div><div class="coast-seal" aria-hidden="true"><span>MARISCOS</span><b>LC</b><span>CON MUCHO SABOR</span></div></div>
     <div class="hero-bottom"><span>MARISCOS LA CAPI</span><a href="#experience">A taste of the coast <span aria-hidden="true">↓</span></a><span>GLENDALE + PHOENIX</span></div>
   </header>
+<div class="ocean-waves hero-tides" aria-hidden="true"><svg viewBox="0 0 2400 100" preserveAspectRatio="none"><g class="tide tide-1"><path d="M0 30 Q150 0 300 30 T600 30 T900 30 T1200 30 V110 H0Z"/><path transform="translate(1200 0)" d="M0 30 Q150 0 300 30 T600 30 T900 30 T1200 30 V110 H0Z"/></g><g class="tide tide-2"><path d="M0 50 Q150 20 300 50 T600 50 T900 50 T1200 50 V110 H0Z"/><path transform="translate(1200 0)" d="M0 50 Q150 20 300 50 T600 50 T900 50 T1200 50 V110 H0Z"/></g><g class="tide tide-3"><path d="M0 72 Q150 42 300 72 T600 72 T900 72 T1200 72 V110 H0Z"/><path transform="translate(1200 0)" d="M0 72 Q150 42 300 72 T600 72 T900 72 T1200 72 V110 H0Z"/></g></svg></div>
   <div class="coastal-strip" aria-hidden="true"><span>FRESCO Y CON CARÁCTER</span><i>✳</i><span>ESTILO CULIACÁN</span><i>✳</i><span>DEL MAR A TU MESA</span><i>✳</i><span>LA CAPI</span></div>
   <nav aria-label="Quick actions">
     <ul class="quick rem2">
@@ -292,37 +293,38 @@ footer a{color:var(--muted)}
 
   <main>
     <section class="sec signatures" id="experience" aria-labelledby="f-h">
-      <div class="pad"><p class="eyebrow">THE LA CAPI WAY</p><h2 id="f-h">Good company.<br><em>Even better mariscos.</em></h2><p class="section-intro">Bring your people. We’ll bring the flavor.</p></div>
+      <div class="pad"><p class="eyebrow">THE LA CAPI WAY</p><h2 id="f-h">Good company.<br><em>Even better mariscos.</em></h2><p class="section-intro">Bring your people. We’ll bring the flavor.</p><div class="gallery-controls"><span>01 — 05 / A TASTE OF LA CAPI</span><div><button type="button" id="gallery-prev" aria-label="Previous featured dishes">←</button><button type="button" id="gallery-next" aria-label="Next featured dishes">→</button></div></div></div>
       <ul class="rail" aria-label="Fresh off the line">
-        <li class="card">
+        <li class="card"><button class="feature-open" type="button" data-feature="0" aria-label="Explore Charola La Capi">↗</button>
           <img src="img/beers-platters.webp" alt="Aguachiles para la mesa: Big platters and ice-cold ballenas" width="437" height="578" loading="lazy" decoding="async">
           <div class="card-txt"><h3>Aguachiles para la mesa</h3><p>Big platters and ice-cold ballenas</p></div>
         </li>
-        <li class="card">
+        <li class="card"><button class="feature-open" type="button" data-feature="1" aria-label="Explore the drinks menu">↗</button>
           <img src="img/ballenas.webp" alt="Ballenas escarchadas: Chile-rimmed and ready to share" width="437" height="578" loading="lazy" decoding="async">
           <div class="card-txt"><h3>Ballenas escarchadas</h3><p>Chile-rimmed and ready to share</p></div>
         </li>
-        <li class="card">
+        <li class="card"><button class="feature-open" type="button" data-feature="2" aria-label="Explore Cóctel La Capi">↗</button>
           <img src="img/m/co-lacapi.webp" alt="Cóctel La Capi: Camarón cocido, aguachile, pulpo, callo y atún" width="437" height="578" loading="lazy" decoding="async">
           <div class="card-txt"><h3>Cóctel La Capi</h3><p>Camarón cocido, aguachile, pulpo, callo y atún</p></div>
         </li>
-        <li class="card">
+        <li class="card"><button class="feature-open" type="button" data-feature="3" aria-label="Explore Ostiones Preparados">↗</button>
           <img src="img/ostiones.webp" alt="Ostiones preparados: Camarón, callo y pulpo" width="437" height="578" loading="lazy" decoding="async">
           <div class="card-txt"><h3>Ostiones preparados</h3><p>Camarón, callo y pulpo</p></div>
         </li>
-        <li class="card">
+        <li class="card"><button class="feature-open" type="button" data-feature="4" aria-label="Explore family platters">↗</button>
           <img src="img/m/ch-lacapi-g.webp" alt="Charolas familiares: Platters for 4–5 or 8–9 people" width="437" height="578" loading="lazy" decoding="async">
           <div class="card-txt"><h3>Charolas familiares</h3><p>Platters for 4–5 or 8–9 people</p></div>
         </li>
       </ul>
-      <p class="hint pad">Swipe for more · full menú below</p>
+      <p class="hint pad">Swipe to explore · tap a dish to discover more</p>
     </section>
     
 
+<div class="ocean-waves menu-tides" aria-hidden="true"><svg viewBox="0 0 2400 100" preserveAspectRatio="none"><g class="tide tide-1"><path d="M0 30 Q150 0 300 30 T600 30 T900 30 T1200 30 V110 H0Z"/><path transform="translate(1200 0)" d="M0 30 Q150 0 300 30 T600 30 T900 30 T1200 30 V110 H0Z"/></g><g class="tide tide-2"><path d="M0 50 Q150 20 300 50 T600 50 T900 50 T1200 50 V110 H0Z"/><path transform="translate(1200 0)" d="M0 50 Q150 20 300 50 T600 50 T900 50 T1200 50 V110 H0Z"/></g><g class="tide tide-3"><path d="M0 72 Q150 42 300 72 T600 72 T900 72 T1200 72 V110 H0Z"/><path transform="translate(1200 0)" d="M0 72 Q150 42 300 72 T600 72 T900 72 T1200 72 V110 H0Z"/></g></svg></div>
     <section class="sec pad" id="menu" aria-labelledby="m-h">
-      <div class="menu-heading"><div><p class="eyebrow">SOMETHING FOR THE WHOLE TABLE</p><h2 id="m-h">El <em>menú.</em></h2></div><p>Find your antojo.<br>Tap a dish for a closer look.</p></div>
-      <nav class="chips" aria-label="Menu sections"><a href="#m-charolas">Charolas familiares</a><a href="#m-botanas">Botanas</a><a href="#m-tostadas">Tostadas</a><a href="#m-cocteles">Cócteles</a><a href="#m-ostiones">Ostiones</a><a href="#m-camarones">Camarones</a><a href="#m-tacos">Tacos</a><a href="#m-quesadillas">Quesadillas</a><a href="#m-complementos">Complementos</a><a href="#m-bebidas">Bebidas</a></nav>
-      <p class="hint">Tap any plate to see it up close. Prices from their online order menu (Oct 2026).</p>
+      <div class="menu-heading"><div><p class="eyebrow">SOMETHING FOR THE WHOLE TABLE</p><h2 id="m-h">El <em>menú.</em></h2></div><p>Find your antojo. <br>Tap a dish for a closer look.</p></div>
+      <div class="menu-tools"><label class="menu-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="sr-only">Search the menu</span><input id="menu-search" type="search" placeholder="Find your antojo… aguachile, tacos, tostadas" autocomplete="off"></label><p id="search-status" role="status" aria-live="polite">Explore the full menu</p></div><p id="search-empty" hidden>No dishes found. Try “camarón”, “tacos”, or “ceviche”.</p><nav class="chips" aria-label="Menu sections"><a href="#m-charolas">Charolas familiares</a><a href="#m-botanas">Botanas</a><a href="#m-tostadas">Tostadas</a><a href="#m-cocteles">Cócteles</a><a href="#m-ostiones">Ostiones</a><a href="#m-camarones">Camarones</a><a href="#m-tacos">Tacos</a><a href="#m-quesadillas">Quesadillas</a><a href="#m-complementos">Complementos</a><a href="#m-bebidas">Bebidas</a></nav>
+      <p class="hint">Tap any plate to see it up close. Menu prices shown from October 2026 · confirm current prices when ordering.</p>
       <section class="msec" id="m-charolas" aria-labelledby="mh-charolas">
         <header><h3 id="mh-charolas">Charolas familiares</h3><p>Grande 8–9 personas · Mediana 4–5</p></header>
         
@@ -818,7 +820,7 @@ footer a{color:var(--muted)}
     </section>
 
     <section class="sec pad" id="visit" aria-labelledby="v-h">
-      <p class="eyebrow">YOUR NEXT STOP</p><h2 id="v-h">Nos vemos <em>en La Capi.</em></h2>
+      <p class="eyebrow">YOUR NEXT STOP</p><h2 id="v-h">Nos vemos <em>en La Capi.</em></h2><p class="visit-intro">One craving. Two places to find us.<br>Choose your location for directions, hours, and a direct call.</p>
       <div class="visit">
         <article class="loc">
           <p class="loc-label">Restaurante</p>
@@ -845,9 +847,9 @@ footer a{color:var(--muted)}
   </main>
 
   <footer><a class="footer-brand" href="#">La Capi<span>DEL MAR A TU PALADAR</span></a>
-    <span>© 2026 Mariscos La Capi · Glendale, AZ</span>
+    <span>© 2026 Mariscos La Capi · Glendale &amp; Phoenix, AZ</span>
     
-  </footer>
+<div class="footer-tools"><button type="button" id="motion-toggle" aria-pressed="false">Pause motion</button><a href="#top">Back to top ↑</a></div>  </footer>
 </div>
 
 <dialog class="dish" id="dish" aria-labelledby="dish-name">
@@ -995,5 +997,6 @@ footer a{color:var(--muted)}
 })();
 </script>
 
+<script src="finish.js" defer></script>
 </body>
 </html>
