@@ -200,3 +200,87 @@ html{scroll-padding-top:20px}.wrap{overflow:clip}.masthead{background:#081a3e}.h
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal-ready{opacity:1;translate:none}}
 @media(max-width:650px){.hero-inner{padding-top:38px}.hero-visual{height:340px}.hero-description{max-width:310px;font-size:12px}.hero .eyebrow{font-size:8px}.hero h1{font-size:clamp(68px,16.9vw,100px)}.hero-bottom{padding-bottom:18px}.ocean-waves{height:59px}.menu-tides{height:48px}.gallery-controls{margin-top:24px}.gallery-controls>span{font-size:7px}.card:nth-child(2) .feature-open{top:25px}.menu-tools{display:block}.menu-search{max-width:none;padding:0 12px}.menu-search input{font-size:16px;min-height:52px}.menu-search input::placeholder{font-size:11px}#search-status{font-size:10px;margin:10px 0 0}.menu-heading>p{font-size:11px}.footer-tools{justify-content:space-between;width:100%}.loc-line{min-height:56px}.btn,.hero-visit{min-height:48px}.hero-visit{display:flex;align-items:center}.card img{transition:filter .2s}.coastal-strip{font-size:7px}.nav-order{min-height:44px;display:flex;align-items:center}.mi-price dt{font-size:10px}.status{font-size:11px}.msec{scroll-margin-top:100px}}
 @media(max-width:650px){.menu-heading{display:block}.menu-heading h2{white-space:nowrap}.menu-heading>p{max-width:none;margin:14px 0 0;font-size:12px}.menu-heading>p br{display:none}.chips a{min-height:44px;display:flex;align-items:center}.menu-heading .eyebrow{max-width:none}.gallery-controls button:disabled{opacity:.35;cursor:default}}
+
+/* Hero photo reel */
+.reel-stage {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  height: 100%;
+  min-height: 420px;
+  max-height: 590px;
+  border: 1px solid #81bfff40;
+  border-radius: 180px 180px 3px 3px;
+  background: #10284d;
+  box-shadow: 0 22px 65px #00000030;
+}
+.reel-frame {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+}
+.reel-frame.is-current, .reel-frame.is-leaving { visibility: visible; }
+.reel-frame.is-current { z-index: 2; }
+.reel-frame.is-leaving { z-index: 1; }
+.reel-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 55%;
+}
+.reel-frame:first-child img { object-position: center 64%; }
+.reel-caption {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 3;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 64px 22px 18px;
+  background: linear-gradient(transparent, #030d20ec);
+  color: #fff;
+}
+.reel-kicker { font-size: 9px; letter-spacing: .16em; color: #b9e1ff; }
+.reel-title { margin: 2px 0 0; font: 500 clamp(22px, 2.7vw, 35px)/1 var(--display); }
+.reel-controls { display: flex; align-items: center; gap: 5px; }
+.reel-count { margin-right: 7px; font-size: 10px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.reel-controls button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid #dcecff80;
+  border-radius: 50%;
+  background: #081a3e9c;
+  color: white;
+  font: 600 20px/1 var(--body);
+  cursor: pointer;
+}
+.reel-controls button:hover { background: #224b82; }
+.reel-controls button:focus-visible { outline-color: #88ccff; }
+.photo-reel .coast-seal { z-index: 4; pointer-events: none; bottom: 98px; }
+@media (prefers-reduced-motion: no-preference) {
+  .photo-reel { --reel-travel: 100%; }
+  .photo-reel.is-backward { --reel-travel: -100%; }
+  .photo-reel.is-changing .is-current { animation: reel-enter .68s cubic-bezier(.23,.75,.26,1) both; }
+  .photo-reel.is-changing .is-leaving { animation: reel-exit .68s cubic-bezier(.23,.75,.26,1) both; }
+  .motion-paused .photo-reel.is-changing .reel-frame { animation: none !important; }
+  @keyframes reel-enter { from { transform: translateX(var(--reel-travel)); } }
+  @keyframes reel-exit { to { transform: translateX(calc(-1 * var(--reel-travel))); } }
+}
+@media (max-width: 900px) {
+  .reel-stage { border-radius: 130px 130px 2px 2px; }
+  .reel-caption { padding-inline: 14px; }
+  .reel-count { display: none; }
+}
+@media (max-width: 650px) {
+  .photo-reel { height: 365px; }
+  .reel-stage { min-height: 0; border-radius: 140px 140px 2px 2px; }
+  .reel-caption { padding-bottom: 12px; }
+  .reel-title { font-size: 21px; }
+  .reel-kicker { font-size: 7px; letter-spacing: .09em; }
+  .photo-reel .coast-seal { bottom: 85px; }
+}

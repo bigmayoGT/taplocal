@@ -280,7 +280,33 @@ footer a{color:var(--muted)}
       <div class="hero-actions"><a class="btn btn-accent" href="#menu">Explore the menu <span aria-hidden="true">↗</span></a><a class="hero-visit" href="#visit">Come find us <span aria-hidden="true">→</span></a></div>
       <p class="status" id="status" role="status" data-prefix="Restaurante: "><i></i><span>See hours below</span></p>
     </div>
-    <div class="hero-visual"><img src="img/hero.webp" alt="Aguachiles and chile-rimmed ballenas on a table at Mariscos La Capi" fetchpriority="high" width="1100" height="1478"><div class="photo-caption"><span>THE TABLE IS SET.</span><span>Glendale, Arizona ↗</span></div><div class="coast-seal" aria-hidden="true"><span>MARISCOS</span><b>LC</b><span>CON MUCHO SABOR</span></div></div>
+    <div class="hero-visual photo-reel" role="region" aria-roledescription="carousel" aria-label="A taste of La Capi">
+      <div class="reel-stage">
+        <div class="reel-frame is-current" data-title="La mesa de La Capi" data-kicker="FROM THE RESTAURANT">
+          <img src="img/hero.webp" alt="Aguachiles and chile-rimmed ballenas on a table at Mariscos La Capi" fetchpriority="high" width="1100" height="1478">
+        </div>
+        <div class="reel-frame" aria-hidden="true" data-title="Aguachile verde" data-kicker="CONCEPT IMAGERY">
+          <img src="img/reel/aguachile.webp" alt="Shrimp aguachile with cucumber, red onion, and lime" fetchpriority="low" decoding="async" width="800" height="1000">
+        </div>
+        <div class="reel-frame" aria-hidden="true" data-title="Tostadas de ceviche" data-kicker="CONCEPT IMAGERY">
+          <img src="img/reel/tostadas.webp" alt="Crisp ceviche tostadas topped with sliced avocado" fetchpriority="low" decoding="async" width="800" height="1000">
+        </div>
+        <div class="reel-frame" aria-hidden="true" data-title="Ballenas escarchadas" data-kicker="CONCEPT IMAGERY">
+          <img src="img/reel/ballenas.webp" alt="Chilled beer bottles with chile seasoning and a glass of lager" fetchpriority="low" decoding="async" width="800" height="1000">
+        </div>
+        <div class="reel-caption">
+          <div><span class="reel-kicker">FROM THE RESTAURANT</span><p class="reel-title">La mesa de La Capi</p></div>
+          <div class="reel-controls" hidden>
+            <span class="reel-count" aria-hidden="true">01 / 04</span>
+            <button type="button" data-reel-step="-1" aria-label="Previous photo"><span aria-hidden="true">‹</span></button>
+            <button type="button" data-reel-toggle aria-label="Pause photo reel"><span aria-hidden="true">Ⅱ</span></button>
+            <button type="button" data-reel-step="1" aria-label="Next photo"><span aria-hidden="true">›</span></button>
+          </div>
+        </div>
+      </div>
+      <span class="sr-only reel-announcement" role="status"></span>
+      <div class="coast-seal" aria-hidden="true"><span>MARISCOS</span><b>LC</b><span>CON MUCHO SABOR</span></div>
+    </div>
     <div class="hero-bottom"><span>MARISCOS LA CAPI</span><a href="#experience">A taste of the coast <span aria-hidden="true">↓</span></a><span>GLENDALE + PHOENIX</span></div>
   </header>
 <div class="ocean-waves hero-tides" aria-hidden="true"><svg viewBox="0 0 2400 100" preserveAspectRatio="none"><g class="tide tide-1"><path d="M0 30 Q150 0 300 30 T600 30 T900 30 T1200 30 V110 H0Z"/><path transform="translate(1200 0)" d="M0 30 Q150 0 300 30 T600 30 T900 30 T1200 30 V110 H0Z"/></g><g class="tide tide-2"><path d="M0 50 Q150 20 300 50 T600 50 T900 50 T1200 50 V110 H0Z"/><path transform="translate(1200 0)" d="M0 50 Q150 20 300 50 T600 50 T900 50 T1200 50 V110 H0Z"/></g><g class="tide tide-3"><path d="M0 72 Q150 42 300 72 T600 72 T900 72 T1200 72 V110 H0Z"/><path transform="translate(1200 0)" d="M0 72 Q150 42 300 72 T600 72 T900 72 T1200 72 V110 H0Z"/></g></svg></div>
@@ -998,5 +1024,6 @@ footer a{color:var(--muted)}
 </script>
 
 <script src="finish.js" defer></script>
+<script src="photo-reel.js" defer></script>
 </body>
 </html>
